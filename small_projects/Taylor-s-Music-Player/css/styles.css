@@ -1,0 +1,300 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(243,255,186);
+    background: linear-gradient(90deg, rgba(243,255,186,1) 14%, rgba(137,229,250,1) 47%, rgba(239,150,205,1) 81%);
+}
+
+.control {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgb(9, 146, 170);
+}
+
+.control:hover {
+    box-shadow: 5px 5px 5px rgb(255, 222, 89);
+}
+
+#current-time, #duration {
+    font-family: "Delius Unicase", cursive;
+    font-size: 15px;
+    color: #004aad;
+}
+
+#current-time {
+    color: #d62170;
+}
+#play {
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#player-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    max-width: 90%;
+    height: 90%;
+    background: rgb(12,192,223);
+    background: linear-gradient(90deg, rgba(12,192,223,0.5) 14%, rgba(230,127,172,0.5) 47%, rgba(255,123,172,0.5) 81%);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #f87ab1;
+
+}
+
+#vinyl-container {
+    position: relative;
+    height: 50%;
+    width: 45%;   
+}
+
+#vinyl {
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
+}
+
+#album-cover {
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#by-pau {
+    font-size: 20px;
+    color: rgba(255, 131, 168, 0.5); 
+    font-family: "Pacifico", cursive;
+}
+
+#by-pau:hover {
+    color: rgba(255, 131, 168, 1);
+}
+
+#song-title {
+    font-family: "Delius Unicase", cursive;
+    font-size: 30px;
+    color: #004aad;
+    text-align: center;
+}
+
+#artist {
+    font-family: "Delius Unicase", cursive;
+    font-size: 15px;
+    color: #004aad;
+    text-align: center;
+}
+
+/*Progress Bar*/
+
+.player-progress{
+    background-color: #984368;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    height: 6px;
+    width: 90%;
+}
+
+
+.music-duration{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 5px 20px;
+}
+
+
+.progress{
+    background-color: #58adea;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/*Clouds*/
+
+#clouds-container {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.cloudNear, .cloudFar {
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    animation: moveClouds 20s infinite linear;
+}
+
+.cloudFar {
+    height: 20%;
+    width: 20%;
+}
+
+#cloud1 {
+    top: 10px;
+    animation: moveClouds 20s infinite linear;
+}
+
+#cloud2 {
+    top: 200px;
+    animation: moveClouds 25s infinite linear;
+}
+
+#cloud3 {
+    top: 300px;
+    animation: moveClouds 15s infinite linear;
+}
+
+#cloud5 {
+    top: 500px;
+    animation: moveClouds 30s infinite linear;
+}
+
+#cloud4 {
+    top: 600px;
+    animation: moveClouds 18s infinite linear;
+}
+
+#cloud6 {
+    top: 900px;
+    animation: moveClouds 28s infinite linear;
+}
+
+@media (max-width: 1024px) { /* Covers most tablets */
+    #player-container {
+        width: 90%;
+        height: 80%;
+    }
+
+    #vinyl-container {
+        height: 400px;
+        width: 400px;  /* Reduce width a bit for better proportions */
+        max-width: 500px; /* Ensures it doesn't stretch too much */
+    }
+
+    #vinyl {
+        height: 100%;
+        width: 100%;
+    }
+
+    #song-title {
+        font-size: 20px;
+    }
+
+    #artist, #current-time, #duration {
+        font-size: 15px;
+    }
+
+    .control {
+        height: 35px;
+        width: 35px;
+    }
+
+    #play {
+        height: 50px;
+        width: 50px;
+    }
+    .cloudNear {
+        height: 150px;
+        width: 300px;
+    }
+
+    .cloudFar {
+        height: 250px;
+        width: 400px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    #player-container {
+        width: 90%;
+        height: 80%;
+    }
+
+    #vinyl-container {
+        height: 300px;
+        width: 300px;
+    
+    }
+    #song-title {
+        font-size: 20px;
+    }
+
+    #artist, #current-time, #duration {
+        font-size: 15px;
+    }
+
+    .control {
+        height: 35px;
+        width: 35px;
+    }
+
+    #play {
+        height: 50px;
+        width: 50px;
+    }
+
+    .cloudNear {
+
+        height: 120px;
+        width: 200px;
+    }
+
+    .cloudFar {
+        height: 150px;
+        width: 300px;
+    }
+}
+
+/** Animation Keyframes **/
+
+/*Disco de Vinilo */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Nubes */
+@keyframes moveClouds {
+    from {
+        left: -500px;
+      }
+      to {
+        left: 100%;
+      }
+    
+}

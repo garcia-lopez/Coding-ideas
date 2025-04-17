@@ -1,0 +1,186 @@
+:root {
+	--green: #81CEFB;
+	--blue: #4ad9db;
+	--red: #fff9c7;
+	--orange: #F6D110;
+	--mustard: #fff9c7;
+	--darkblue: #2f3e9c;
+	--darkred: #120f70;
+	--purple: #33414a;
+	--outline: 2px;
+}
+/*font style original idea from: https://codepen.io/mandymichael/pen/VprZaq*/
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1 {	
+    font-family: 'CoreCircus', sans-serif;
+    font-size: 16vw;
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: var(--red);
+    text-shadow: 
+        -1px -1px 0 var(--purple), 1px -1px 0 var(--purple), -1px 1px 0 var(--purple), 1px 1px 0 var(--purple), 
+        1px 0px 0px var(--green), 0px 1px 0px var(--green), 2px 1px 0px var(--green), 1px 2px 0px var(--green), 3px 2px 0px var(--green), 2px 3px 0px var(--green), 4px 3px 0px var(--green), 3px 4px 0px var(--green), 5px 4px 0px var(--green),
+        3px 5px 0px var(--purple), 6px 5px 0px var(--purple), 
+        -1px 2px 0 black, 0 3px 0 var(--purple), 1px 4px 0 var(--purple), 2px 5px 0px var(--purple),
+        2px -1px 0 var(--purple), 3px 0 0 var(--purple), 4px 1px 0 var(--purple), 5px 2px 0px var(--purple), 6px 3px 0 var(--purple), 7px 4px 0 var(--purple),
+      10px 10px 4px var(--mustard);
+  
+  }
+
+  &::before {
+		text-shadow: 
+			-1px -1px 0 var(--darkred), 1px -1px 0 var(--darkred), -1px 1px 0 var(--darkred), 1px 1px 0 var(--darkred), 
+			1px 0px 0px var(--orange), 0px 1px 0px var(--orange), 2px 1px 0px var(--orange), 1px 2px 0px var(--orange), 3px 2px 0px var(--orange), 2px 3px 0px var(--orange), 4px 3px 0px var(--orange), 3px 4px 0px var(--orange), 5px 4px 0px var(--orange),
+			3px 5px 0px var(--darkred), 6px 5px 0px var(--darkred), 
+			-1px 2px 0 black, 0 3px 0 var(--darkred), 1px 4px 0 var(--darkred), 2px 5px 0px var(--darkred),
+			2px -1px 0 var(--darkred), 3px 0 0 var(--darkred), 4px 1px 0 var(--darkred), 5px 2px 0px var(--darkred), 6px 3px 0 var(--darkred), 7px 4px 0 var(--darkred),
+			10px 10px 4px rgba(#6af177, .8);
+		color: var(--green);
+		height: 66%;
+	}
+	
+	&::after {
+		height: 33%;
+		color: var(--blue);
+		text-shadow: 
+			-1px -1px 0 var(--darkblue), 1px -1px 0 var(--darkblue), -1px 1px 0 var(--darkblue), 1px 1px 0 var(--darkblue),
+			1px 0px 0px var(--red), 0px 1px 0px var(--red), 2px 1px 0px var(--red), 1px 2px 0px var(--red), 3px 2px 0px var(--red), 2px 3px 0px var(--red), 4px 3px 0px var(--red), 3px 4px 0px var(--red), 5px 4px 0px var(--red),
+			3px 5px 0px var(--darkblue), 6px 5px 0px var(--darkblue), 
+			-1px 2px 0 black, 0 3px 0 var(--darkblue), 1px 4px 0 var(--darkblue), 2px 5px 0px var(--darkblue),
+			2px -1px 0 var(--darkblue), 3px 0 0 var(--darkblue), 4px 1px 0 var(--darkblue), 5px 2px 0px var(--darkblue), 6px 3px 0 var(--darkblue), 7px 4px 0 var(--darkblue);
+	}
+
+
+  h2 {
+    color: #0f91b8;
+    font-family: "Delius Unicase", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+  }
+  .projects-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+  }
+
+  .description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color:#D5D3CC ;
+    color: #297d97;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .navBar {
+    display: flex;
+    justify-content: space-around;
+    color: #55aec9;
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+  }
+
+  .image-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: url('./assets/dark-mode-background2.png');
+    
+  }
+  
+  #main-title, .description-container {
+    font-family: "Delius Unicase", cursive;
+  }
+
+  .nav-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .nav-icon:hover {
+    cursor: pointer;
+  }
+
+  .cursor {
+    /* Shape the cursor */
+    width: 40px;
+    height: 40px;
+    background-color: #406768;
+    border-radius: 50%;
+    /* Position the cursor */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* So that the cursor doesn't overlap and effect pointer events like mouse clicks or hover */
+    pointer-events: none;
+    /* For the inner cursor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Making the transitions smooth */
+    transition: width 0.3s ease, height 0.3s ease-out;
+  }
+  
+  .inner {
+    width: 0px;
+    height: 0px;
+    background-color: #D5D3CC;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease-out;
+  }
+
+  /*Exporting the font I guess*/
+
+  @font-face {
+    font-family: 'CoreCircus';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf') format('truetype');}
+  
+    
+    @font-face {font-family: 'CoreCircusPierrot4';src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot');src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot?#iefix') format('embedded-opentype'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff2') format('woff2'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff') format('woff'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.ttf') format('truetype');}

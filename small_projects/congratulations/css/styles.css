@@ -1,0 +1,170 @@
+/*Hey Pau, u should read this https://fonts.google.com/knowledge/using_type/the_foundations_of_web_typography*/
+
+:root {
+    --background: #100225;
+    --background_gradient: radial-gradient(circle closest-side, rgba(98, 56, 161, 0.8) 1%, rgba(17, 2, 40, 0.8) 130%);
+    --pink: #C231C9;
+    --lavander: #4C5DD7;
+    --light_blue: #68A2EB;
+    --purple: #260868;
+    --font-family: "Albert Sans", serif;
+    --font-weight: 100;
+    --font-style: normal;
+
+}
+  
+body {
+    padding: 0;
+    height:100vh;
+    margin: 0;
+    background-image: url('../assets/blackBrickBackground.jpg'); 
+}
+
+/*Where everything is contained*/
+#container {
+    display: flex;
+    margin: 0%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background_gradient);
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    all: unset; /* Removes default button styles */
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-style: var(--font-style);
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    text-shadow: 0 0 20px white, 1px 0 5px white, 0 0 100px red, 0 0 60px red, 0 0 40px red,  0 0 100px red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    border: 5px solid ; 
+    background-color: transparent;
+    box-shadow:0px 0px 20px red ,0px 0px 10px white, 0px 0px 80px red ,inset 0px 0px 20px white,inset 0px 0px 10px white, inset 0px 0px 100px red;
+    cursor: pointer;
+}
+
+
+/*Where everything is contained*/
+#container {
+    display: flex;
+    margin: 0%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background_gradient);
+    /*text-shadow: 0 0 20px white, 1px 0 5px white, 0 0 100px var(--pink), 0 0 60px var(--pink), 0 0 40px var(--pink),  0 0 100px var(--pink) ; */
+    height: 100%;
+    width: 100%;
+}
+
+#neonLights {
+    font-family: var(--font-family);
+    font-weight: 100;
+    font-style: var(--font-style);
+    text-align: center;
+    color: white;
+    border-width: 5px;
+    text-shadow: 0 0 20px white, 1px 0 5px white, 0 0 100px var(--pink), 0 0 60px var(--pink), 0 0 40px var(--pink),  0 0 100px var(--pink);
+    padding: 20px;
+    border-color: white;
+    box-shadow:0px 0px 20px white,0px 0px 10px white, 0px 0px 80px var(--light_blue),inset 0px 0px 20px white,inset 0px 0px 10px white, inset 0px 0px 100px var(--light_blue);
+    border-style: solid;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    width: 200px;
+
+}
+
+
+/*Styling the arrow*/
+#arrowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: MoveUpDown 1s linear infinite;
+    position: relative;
+    margin-top: 40px;
+}
+
+
+#arrowBody {
+    height: 100px;
+    width: 50px;
+    border-color: white;
+    border-style: solid solid none ; /*top right bottom left*/
+    background-color: transparent;
+    box-shadow:0px 0px 20px white,0px 0px 10px white, 0px 0px 80px var(--light_blue),inset 0px 0px 20px white,inset 0px 0px 10px white, inset 0px 0px 100px var(--light_blue);
+    
+}
+
+#arrowTriangle {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+    margin-top: 0;
+    height: 0;
+    width: 0;
+    border-left: 50px solid transparent ;
+    border-right: 50px solid transparent;
+    border-top: 50px solid rgba(255, 255, 255, 1);
+}  
+
+  #arrowTwo {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 50px;
+    height: 0;
+    width: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 40px solid rgba(98, 56, 161, 0.8);
+}
+
+
+#arrowTwo::after {
+    content: "";
+    position: absolute;
+    top: -40px; /* Align with border-top */
+    left: -40px; /* Adjust for border */
+    width: 80px; /* Match border size */
+    height: 40px;
+    background: rgba(98, 56, 161, 0.8);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    box-shadow: 
+        inset 0px 0px 20px white, 
+        inset 0px 0px 10px white, 
+        inset 0px 0px 100px var(--light_blue);
+}
+
+
+
+/*Animations :)*/
+
+@keyframes MoveUpDown {
+    0%, 100% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 55px;
+    }
+  }
+
+
+

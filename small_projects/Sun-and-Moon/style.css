@@ -1,0 +1,178 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: radial-gradient(circle at center, #2B124C 60%, #010119);
+    overflow: hidden;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 100%;
+    background-color: transparent; 
+}
+
+
+.moon, .sun {
+    display: flex;
+    transition: 0.5s;
+    position: relative;
+    background-color: white;
+    height: 80%;
+    width: 40%;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0%;
+}
+
+.center {
+    position: absolute;
+    left: 49%;
+    background-color: #2B124C;
+    box-shadow: inset 10px 0 10px -2px rgba(255, 255, 255, 0.7), -70px 0 50px 2px rgb(160, 147, 147, 0.5), 10px 0 5px 6px #2B124C, inset -30px 0 20px 5px #2B124C;
+    border-radius: 100%;
+    height: 60%;
+    width: 25%;
+}
+
+@keyframes SunnyDay {
+    from {background-color: white;}
+    to {background-color: #f7f5bc;}
+}
+
+@keyframes DarkNight {
+    from {background-color: #f7f5bc;}
+    to {background-color: white;}
+}
+
+@keyframes SunnyDayCenter {
+    from {
+        transform: translateX(50%); /* Move to its original position */
+        background-color: #ece75f;
+        
+    }
+    to {
+        transform: translateX(0%); /* Start from the right */
+        background-color: #f7f5bc;
+        
+    }
+}
+
+@keyframes DarkNightCenter {
+    from {
+        transform: translateX(-50%); /* Start from the right */
+        background-color: #f7f5bc;
+        
+    }
+    to {
+        /*background-color: black;*/
+        transform: translateX(0%); /* Move to its original position */
+        background-color: #2B124C;
+       
+
+    }
+}
+
+.moon:hover, .sun:hover, .small:hover, .center:hover {
+    cursor: pointer;
+}
+
+.clouds {
+    position: absolute;
+    z-index: 2; /* Higher z-index to be on top */
+    height: 15%;
+    width: 15%;
+    /* animation: moveClouds 8s infinite ease;*/
+}
+
+#cloud1 {
+    top:  10%;
+    left: 10px;
+    animation: moveClouds 8s infinite linear;
+}
+
+#cloud2 {
+    top: 20%;
+    left: 60px;
+    animation: moveClouds 10s infinite linear;
+}
+#cloud3 {
+    top: 70%;
+    left: 90px;
+    animation: moveClouds 7s infinite linear;
+}
+#cloud4 {
+    top:  40%;
+    left: 100px;
+    animation: moveClouds 11s infinite linear;
+}
+
+#cloud5 {
+    top: 80%;
+    left: -170px;
+    animation: moveClouds 14s infinite linear;
+}
+
+
+@keyframes moveClouds {
+    from {
+        left: -200px;
+      }
+      to {
+        left: 100%;
+      }
+    
+}
+
+
+/*Media queries*/
+@media (max-width: 1024px) { /* Covers most tablets */
+    .moon, .sun {
+        height: 400px;
+        width: 400px;  /* Reduce width a bit for better proportions */
+        max-width: 500px; /* Ensures it doesn't stretch too much */
+    }
+
+    .center {
+        height: 200px;
+        width: 200px;
+    }
+
+    
+    .clouds {
+      height: 100px;
+      width: 160px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .moon, .sun {
+        height: 300px;
+        width: 300px;
+    }
+
+    .center {
+        height: 200px;
+        width: 200px;
+    }
+
+    .clouds {
+        height: 90px;
+        width: 150px;
+      }
+}
