@@ -1,20 +1,45 @@
 /**Cursor original idea from: https://github.com/thecodedose/web-design-tricks/tree/main */
-const cursor = document.getElementById("cursor")
+const cursor = document.getElementById("cursor");
+const gitHubIcon = document.getElementById("gitHubIcon");
 const inner = document.getElementById('inner');
 const state = document.getElementById('dayOrNight');
 const image = document.getElementById('image-container');
-const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; // Check if the user prefers dark mode
 const root = document.documentElement; // Select the :root element
-const fontColor = getComputedStyle(root).getPropertyValue('--red').trim(); // Access the --green variable
-console.log(fontColor);
 
-if (isDarkMode) {
-  image.style.backgroundImage = "url('landing/assets/dark-mode-background2.png')";
-} else {
-  // User prefers light mode
-  image.style.backgroundImage = "url('landing/container-background.png')";
+function toggleDarkMode() { 
+  if (isDarkMode) {
+    image.style.backgroundImage = "url('landing/assets/dark-mode-background2.png')";
+    // Set the CSS variables for dark mode
+    root.style.setProperty('--red', '#fff9c7');
+    root.style.setProperty('--green', '#ffa1ea');
+    root.style.setProperty('--description', '#280a33');
+    root.style.setProperty('--description-text', '#ffa1ea');
+    root.style.setProperty('--projects', '#fff9c7');
+    root.style.setProperty('--cursorOut', '#ffc0a7');
+    root.style.setProperty('--cursorIn', '#280a33');
+    root.style.setProperty('--bodyColor', '#07041e');
+    //set the icons src for dark mode 
+    gitHubIcon.src = "landing/assets/githubIconNight.png"; 
+    state.src = "landing/assets/moon.png";
+  } else {
+    // User prefers light mode
+    image.style.backgroundImage = "url('landing/assets/container-background.png')";
+    // Set the CSS variables for light mode
+    root.style.setProperty('--red', '#E6F2F4'); 
+    root.style.setProperty('--green', '#4ad9db');
+    root.style.setProperty('--description', '#D5D3CC');
+    root.style.setProperty('--description-text', '#297d97');
+    root.style.setProperty('--projects', '#0f91b8');
+    root.style.setProperty('--cursorOut', '#406768');
+    root.style.setProperty('--cursorIn', '#D5D3CC');
+    root.style.setProperty('--bodyColor', 'white');
+    //set the icons src for light mode 
+    gitHubIcon.src = "landing/assets/githubIconDay.png";
+    state.src = "landing/assets/sun.png"; 
+  }
+  
 }
-
 /*Customized mouse effect */
 let mouseX = 0,
   mouseY = 0
@@ -71,8 +96,15 @@ document.addEventListener('mouseout', (e) => {
 });
 
 state.addEventListener('click', () => {
-  // Add your logic here
-  console.log("clicked")
+  if(isDarkMode){
+    isDarkMode = false;
+  } else {
+    isDarkMode = true;
+  } 
+  toggleDarkMode();
+  
 });
+
+toggleDarkMode(); // Initial call to set the mode based on user preference
 
 

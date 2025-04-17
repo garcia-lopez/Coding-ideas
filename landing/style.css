@@ -8,6 +8,12 @@
 	--darkred: #120f70;
 	--purple: #33414a;
 	--outline: 2px;
+  --description: #D5D3CC;
+  --description-text: #297d97;
+  --projects: #0f91b8;
+  --cursorOut: #406768;
+  --cursorIn: #D5D3CC;
+  --bodyColor: white;
 }
 /*font style original idea from: https://codepen.io/mandymichael/pen/VprZaq*/
 body {
@@ -18,6 +24,7 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    background-color: var(--bodyColor);
   }
 
   a {
@@ -69,9 +76,11 @@ body {
 			2px -1px 0 var(--darkblue), 3px 0 0 var(--darkblue), 4px 1px 0 var(--darkblue), 5px 2px 0px var(--darkblue), 6px 3px 0 var(--darkblue), 7px 4px 0 var(--darkblue);
 	}
 
-
+  h2#description {
+    color: var(--description-text);
+  }
   h2 {
-    color: #0f91b8;
+    color: var(--projects);
     font-family: "Delius Unicase", cursive;
     font-weight: 400;
     font-style: normal;
@@ -105,8 +114,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    background-color:#D5D3CC ;
-    color: #297d97;
+    background-color: var(--description) ;
     font-weight: bold;
     font-size: 20px;
   }
@@ -114,9 +122,6 @@ body {
   .navBar {
     display: flex;
     justify-content: space-around;
-    color: #55aec9;
-    font-weight: bold;
-    font-size: 15px;
     position: absolute;
     top: 0;
   }
@@ -129,8 +134,6 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    background-image: url('./assets/dark-mode-background2.png');
-    
   }
   
   #main-title, .description-container {
@@ -150,7 +153,7 @@ body {
     /* Shape the cursor */
     width: 40px;
     height: 40px;
-    background-color: #406768;
+    background-color: var(--cursorOut);
     border-radius: 50%;
     /* Position the cursor */
     position: absolute;
@@ -168,7 +171,7 @@ body {
   .inner {
     width: 0px;
     height: 0px;
-    background-color: #D5D3CC;
+    background-color: var(--cursorIn);
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
@@ -184,3 +187,34 @@ body {
   
     
     @font-face {font-family: 'CoreCircusPierrot4';src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot');src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.eot?#iefix') format('embedded-opentype'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff2') format('woff2'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.woff') format('woff'),url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_13_0.ttf') format('truetype');}
+
+    /*Media queries */
+    /*Media queries*/
+@media (max-width: 1024px) { /* Covers most tablets */
+  .cursor {
+    display: none;
+  }
+
+  .inner {
+    display: none;
+  }
+
+  .description-container {
+    font-size: 17px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+
+  .inner {
+    display: none;
+  }
+
+  .description-container {
+    font-size: 15px;
+  }
+}
