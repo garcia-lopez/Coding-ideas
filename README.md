@@ -1,4 +1,4 @@
-# ✨ Coding Ideaa
+# ✨ Coding Ideas
 
 A personal collection of fun coding projects inspired by my friends.  
 Each project is a small experiment where I explore creativity, UI design, and frontend logic using vanilla JavaScript, HTML, and CSS.
